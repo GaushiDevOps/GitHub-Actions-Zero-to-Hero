@@ -1,5 +1,6 @@
 name: My First GitHub Actions
 
+# When this should happen
 on: [push]
 
 jobs:
