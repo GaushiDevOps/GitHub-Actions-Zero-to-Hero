@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   build:
+    name: Python Setup
 
     runs-on: [self-hosted, Linux]
 
@@ -31,8 +32,10 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+   
   
   build2:
+    name: Just Checkout
     
     runs-on: [self-hosted]
 
@@ -40,6 +43,7 @@ jobs:
     - uses: actions/checkout@v3
 
   build3:
+    name: Third Job
 
     needs: build
 
